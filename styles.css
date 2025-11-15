@@ -51,9 +51,13 @@ header {
 .logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 2rem;
     margin-bottom: 0.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header-characters {
@@ -63,8 +67,8 @@ header {
 }
 
 .header-char {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 
@@ -235,9 +239,9 @@ nav a:hover {
 
 .hero-text h2 {
     font-family: 'VT323', monospace;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     color: var(--text-dark);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     line-height: 1.4;
     letter-spacing: 2px;
 }
@@ -249,7 +253,7 @@ nav a:hover {
 
 .hero-text p {
     font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     margin-bottom: 2rem;
     color: #333;
     line-height: 1.6;
@@ -257,18 +261,18 @@ nav a:hover {
 }
 
 .cta-button {
-    background: linear-gradient(135deg, var(--primary-pink), var(--primary-purple));
+    background: linear-gradient(135deg, #ff6b9d, #c77dff);
     color: var(--text-light);
     border: none;
-    padding: 1rem 2rem;
-    font-size: 0.7rem;
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
     font-weight: normal;
     border-radius: 30px;
     cursor: pointer;
     box-shadow: var(--shadow-lg);
     transition: all 0.3s ease;
     font-family: 'VT323', monospace;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .cta-button:hover {
@@ -956,6 +960,235 @@ html {
     margin: 0 auto;
 }
 
+/* Posture Game Styles */
+.character-selection {
+    margin: 2rem 0;
+}
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.selectable-character {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 0;
+    text-align: center;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.selectable-character:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffd700;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.select-char-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+.selectable-character h3 {
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+.game-interface {
+    margin-top: 3rem;
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.game-character-display {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 0;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.game-character-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.game-character-display h3 {
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.posture-checklist {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 0;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.posture-checklist h3 {
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+}
+
+.checklist-item input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    accent-color: #ffd700;
+}
+
+.checklist-item label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    cursor: pointer;
+    flex: 1;
+}
+
+.posture-score {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 0;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.posture-score h3 {
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.score-display {
+    margin-bottom: 1.5rem;
+}
+
+.score-number {
+    font-family: 'VT323', monospace;
+    font-size: 4rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+}
+
+.score-bar-container {
+    width: 100%;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.score-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ffd700, #ff6b9d);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.posture-message {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.posture-tips-game {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 0;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.posture-tips-game h3 {
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.posture-tips-game ul {
+    list-style: none;
+}
+
+.posture-tips-game li {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    line-height: 1.6;
+}
+
+.posture-tips-game li:last-child {
+    border-bottom: none;
+}
+
+.reset-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 0;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reset-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #ffd700;
+    transform: translateY(-2px);
+}
+
 /* Responsive Modal */
 @media (max-width: 768px) {
     .modal-content {
@@ -970,6 +1203,21 @@ html {
     
     nav ul {
         margin-bottom: 1rem;
+    }
+    
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .header-char {
+        width: 70px;
+        height: 70px;
     }
 }
 

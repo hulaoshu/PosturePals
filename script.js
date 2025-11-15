@@ -194,6 +194,78 @@ function scrollToGame() {
     document.getElementById('game').scrollIntoView({ behavior: 'smooth' });
 }
 
+// Posture Game Functions
+let selectedCharacter = null;
+
+function selectCharacter(charType, charName) {
+    selectedCharacter = { type: charType, name: charName };
+    
+    // Hide selection, show game interface
+    document.getElementById('characterSelection').style.display = 'none';
+    document.getElementById('gameInterface').style.display = 'block';
+    
+    // Update character display
+    const charImg = document.getElementById('selectedCharacterImg');
+    const charNameEl = document.getElementById('selectedCharacterName');
+    
+    charImg.src = `images/${charType}.png`;
+    charImg.alt = charName;
+    charNameEl.textContent = charName;
+    
+    // Reset checkboxes
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById(`check${i}`).checked = false;
+    }
+    
+    // Reset score
+    updatePostureScore();
+    
+    // Scroll to game interface
+    document.getElementById('gameInterface').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function updatePostureScore() {
+    let checkedCount = 0;
+    for (let i = 1; i <= 5; i++) {
+        if (document.getElementById(`check${i}`).checked) {
+            checkedCount++;
+        }
+    }
+    
+    const score = (checkedCount / 5) * 100;
+    const scoreEl = document.getElementById('postureScore');
+    const scoreBar = document.getElementById('scoreBar');
+    const messageEl = document.getElementById('postureMessage');
+    
+    scoreEl.textContent = Math.round(score) + '%';
+    scoreBar.style.width = score + '%';
+    
+    // Update message based on score
+    if (score === 0) {
+        messageEl.textContent = 'Check off the items above to improve your posture score!';
+    } else if (score < 60) {
+        messageEl.textContent = 'Keep going! You\'re making progress! 💪';
+    } else if (score < 100) {
+        messageEl.textContent = 'Great job! Almost perfect posture! ⭐';
+    } else {
+        messageEl.textContent = 'Perfect! Your posture is amazing! Your PosturePal is so happy! 🌟';
+    }
+}
+
+function resetGame() {
+    selectedCharacter = null;
+    document.getElementById('characterSelection').style.display = 'block';
+    document.getElementById('gameInterface').style.display = 'none';
+    
+    // Reset checkboxes
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById(`check${i}`).checked = false;
+    }
+    
+    // Scroll to selection
+    document.getElementById('characterSelection').scrollIntoView({ behavior: 'smooth' });
+}
+
 // Auto-update stats (gradual decrease over time)
 setInterval(() => {
     if (characterStats.hunger > 0) {

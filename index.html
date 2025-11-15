@@ -31,7 +31,6 @@
         <div class="container">
             <ul>
                 <li><a href="#why">Why It Matters</a></li>
-                <li><a href="#examples">Bad Posture Examples</a></li>
                 <li><a href="#characters">Meet Your Friends</a></li>
                 <li><a href="#data">The Facts</a></li>
                 <li><a href="#game">Play Now</a></li>
@@ -60,7 +59,7 @@
                     <div class="hero-text">
                         <h2><strong>Better Posture, Better Pet!</strong></h2>
                         <p>Improve your posture to help your PostureGotchi grow stronger<br>Good habits turn into game rewards!</p>
-                        <button class="cta-button" onclick="scrollToGame()">Start Your Journey</button>
+                        <button class="cta-button" onclick="scrollToGame()">Play Now!</button>
                     </div>
                 </div>
             </div>
@@ -105,56 +104,87 @@
             </div>
         </section>
 
-        <!-- Bad Posture Examples Section -->
-        <section id="examples" class="section dark-section">
+        <!-- Posture Game Section -->
+        <section id="game" class="section dark-section">
             <div class="container">
-                <h2 class="section-title">Common Posture Mistakes (We've All Been There!)</h2>
-                <p class="section-subtitle">Check out these real examples of bad posture - can you spot what's wrong?</p>
-                <div class="examples-grid" id="examplesGrid">
-                    <div class="example-card" data-example-id="0">
-                        <div class="example-image">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=500&fit=crop" alt="Slouching at desk" class="example-img" />
-                            <div class="badge bad">❌ Bad</div>
-                            <button class="edit-btn" onclick="editExample(0)" style="display: none;">✏️ Edit</button>
+                <h2 class="section-title">Choose Your PosturePal!</h2>
+                <p class="section-subtitle">Pick a character and start improving your posture together!</p>
+                
+                <!-- Character Selection -->
+                <div id="characterSelection" class="character-selection">
+                    <div class="selection-grid">
+                        <div class="selectable-character" onclick="selectCharacter('dinosaur', 'Dino Nino')">
+                            <img src="images/dinosaur.png" alt="Dino Nino" class="select-char-img" />
+                            <h3>Dino Nino</h3>
                         </div>
-                        <h3 class="example-title">The Desk Slouch</h3>
-                        <p class="example-wrong"><strong>What's wrong:</strong> <span class="wrong-text">Rounded shoulders, forward head, curved back</span></p>
-                        <p class="example-why"><strong>Why it's bad:</strong> <span class="why-text">Causes neck strain, back pain, and compressed lungs</span></p>
-                        <p class="example-fix"><strong>Fix it:</strong> <span class="fix-text">Sit with feet flat, back straight, screen at eye level</span></p>
-                    </div>
-                    <div class="example-card" data-example-id="1">
-                        <div class="example-image">
-                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=500&fit=crop" alt="Phone neck" class="example-img" />
-                            <div class="badge bad">❌ Bad</div>
-                            <button class="edit-btn" onclick="editExample(1)" style="display: none;">✏️ Edit</button>
+                        <div class="selectable-character" onclick="selectCharacter('axolotl', 'Lotty Axolotl')">
+                            <img src="images/axolotl.png" alt="Lotty Axolotl" class="select-char-img" />
+                            <h3>Lotty Axolotl</h3>
                         </div>
-                        <h3 class="example-title">Text Neck</h3>
-                        <p class="example-wrong"><strong>What's wrong:</strong> <span class="wrong-text">Head tilted down, neck bent forward</span></p>
-                        <p class="example-why"><strong>Why it's bad:</strong> <span class="why-text">Puts 60 pounds of pressure on your neck! Can cause permanent damage</span></p>
-                        <p class="example-fix"><strong>Fix it:</strong> <span class="fix-text">Hold phone at eye level, take breaks, stretch your neck</span></p>
-                    </div>
-                    <div class="example-card" data-example-id="2">
-                        <div class="example-image">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop" alt="Crossed legs" class="example-img" />
-                            <div class="badge bad">❌ Bad</div>
-                            <button class="edit-btn" onclick="editExample(2)" style="display: none;">✏️ Edit</button>
+                        <div class="selectable-character" onclick="selectCharacter('chicken', 'Chick Peep')">
+                            <img src="images/chicken.png" alt="Chick Peep" class="select-char-img" />
+                            <h3>Chick Peep</h3>
                         </div>
-                        <h3 class="example-title">The Leg Crosser</h3>
-                        <p class="example-wrong"><strong>What's wrong:</strong> <span class="wrong-text">One leg crossed over the other, uneven hips</span></p>
-                        <p class="example-why"><strong>Why it's bad:</strong> <span class="why-text">Misaligns your spine and can cause hip and back pain</span></p>
-                        <p class="example-fix"><strong>Fix it:</strong> <span class="fix-text">Keep both feet flat on the floor, switch positions regularly</span></p>
-                    </div>
-                    <div class="example-card" data-example-id="3">
-                        <div class="example-image">
-                            <img src="https://images.unsplash.com/photo-1503676260728-1c00e094b736?w=400&h=500&fit=crop" alt="Good posture" class="example-img" />
-                            <div class="badge good">✅ Good</div>
-                            <button class="edit-btn" onclick="editExample(3)" style="display: none;">✏️ Edit</button>
+                        <div class="selectable-character" onclick="selectCharacter('dog', 'Cup Pup')">
+                            <img src="images/dog.png" alt="Cup Pup" class="select-char-img" />
+                            <h3>Cup Pup</h3>
                         </div>
-                        <h3 class="example-title">Perfect Posture!</h3>
-                        <p class="example-wrong"><strong>What's right:</strong> <span class="wrong-text">Straight back, shoulders back, head aligned</span></p>
-                        <p class="example-why"><strong>Why it's great:</strong> <span class="why-text">Reduces strain, improves breathing, boosts confidence</span></p>
-                        <p class="example-fix"><strong>Keep it up:</strong> <span class="fix-text">This is what we're aiming for! Your PostureGotchi will love this!</span></p>
                     </div>
+                </div>
+
+                <!-- Game Interface (shown after character selection) -->
+                <div id="gameInterface" class="game-interface" style="display: none;">
+                    <div class="game-layout">
+                        <div class="game-character-display">
+                            <img id="selectedCharacterImg" src="" alt="Selected Character" class="game-character-img" />
+                            <h3 id="selectedCharacterName"></h3>
+                        </div>
+                        <div class="game-content">
+                            <div class="posture-checklist">
+                                <h3>Posture Checklist</h3>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check1" onchange="updatePostureScore()">
+                                    <label for="check1">Feet flat on the floor</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check2" onchange="updatePostureScore()">
+                                    <label for="check2">Back straight against chair</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check3" onchange="updatePostureScore()">
+                                    <label for="check3">Shoulders relaxed and back</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check4" onchange="updatePostureScore()">
+                                    <label for="check4">Head aligned with spine</label>
+                                </div>
+                                <div class="checklist-item">
+                                    <input type="checkbox" id="check5" onchange="updatePostureScore()">
+                                    <label for="check5">Screen at eye level</label>
+                                </div>
+                            </div>
+                            <div class="posture-score">
+                                <h3>Your Posture Score</h3>
+                                <div class="score-display">
+                                    <div class="score-number" id="postureScore">0%</div>
+                                    <div class="score-bar-container">
+                                        <div class="score-bar" id="scoreBar"></div>
+                                    </div>
+                                </div>
+                                <p id="postureMessage" class="posture-message">Check off the items above to improve your posture score!</p>
+                            </div>
+                            <div class="posture-tips-game">
+                                <h3>Quick Tips</h3>
+                                <ul>
+                                    <li>Take breaks every 30 minutes</li>
+                                    <li>Stretch your neck and shoulders</li>
+                                    <li>Keep your screen at arm's length</li>
+                                    <li>Use a lumbar support cushion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="reset-button" onclick="resetGame()">Choose Different Character</button>
                 </div>
             </div>
         </section>
@@ -261,69 +291,6 @@
             </div>
         </section>
 
-        <!-- Game Section -->
-        <section id="game" class="section">
-            <div class="container">
-                <h2 class="section-title">Play PostureGotchi Now!</h2>
-                <div class="game-container">
-                    <div class="tamagotchi-device">
-                        <div class="device-screen">
-                            <div class="character-display" id="characterDisplay">
-                                <div class="pixel-character">🐾</div>
-                            </div>
-                            <div class="device-stats">
-                                <div class="device-stat">
-                                    <span>Hunger</span>
-                                    <div class="stat-bar-small">
-                                        <div class="fill" style="width: 80%"></div>
-                                    </div>
-                                </div>
-                                <div class="device-stat">
-                                    <span>Happiness</span>
-                                    <div class="stat-bar-small">
-                                        <div class="fill" style="width: 75%"></div>
-                                    </div>
-                                </div>
-                                <div class="device-stat">
-                                    <span>Posture</span>
-                                    <div class="stat-bar-small">
-                                        <div class="fill" style="width: 70%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="device-message" id="deviceMessage">
-                                "Sit up straight! I'm watching! 🐾"
-                            </div>
-                        </div>
-                        <div class="device-buttons">
-                            <button class="device-btn" onclick="feedCharacter()">Feed</button>
-                            <button class="device-btn" onclick="playWithCharacter()">Play</button>
-                            <button class="device-btn" onclick="checkPosture()">Check</button>
-                            <button class="device-btn" onclick="cleanCharacter()">Clean</button>
-                        </div>
-                    </div>
-                    <div class="game-info">
-                        <h3>How to Play</h3>
-                        <ul class="game-instructions">
-                            <li>📱 <strong>Feed:</strong> Give your PostureGotchi energy by maintaining good posture</li>
-                            <li>🎮 <strong>Play:</strong> Take posture breaks and stretch to keep them happy</li>
-                            <li>✅ <strong>Check:</strong> Verify your posture is correct - your character will celebrate!</li>
-                            <li>🧹 <strong>Clean:</strong> Reset bad habits and start fresh</li>
-                        </ul>
-                        <div class="posture-tips">
-                            <h4>Quick Posture Checklist:</h4>
-                            <ul>
-                                <li>✓ Feet flat on the floor</li>
-                                <li>✓ Back straight against chair</li>
-                                <li>✓ Shoulders relaxed and back</li>
-                                <li>✓ Head aligned with spine</li>
-                                <li>✓ Screen at eye level</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
