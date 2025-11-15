@@ -36,15 +36,16 @@ body {
 
 /* Header Styles */
 header {
-    background: #4a90e2;
-    color: var(--text-light);
+    background: rgba(168, 230, 207, 0.9);
+    color: var(--text-dark);
     padding: 2rem 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 4px solid #2c5aa0;
+    border-bottom: 4px solid rgba(255, 170, 165, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -71,13 +72,14 @@ header {
 
 /* Navigation */
 nav {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.8);
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 120px;
     z-index: 999;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 2px solid rgba(255, 170, 165, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 nav .container {
@@ -106,16 +108,16 @@ nav a {
 }
 
 nav a:hover {
-    background: #4a90e2;
-    color: var(--text-light);
-    border-color: #2c5aa0;
+    background: rgba(255, 170, 165, 0.8);
+    color: var(--text-dark);
+    border-color: rgba(168, 230, 207, 0.8);
     transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
     padding: 4rem 0;
-    background: #ffffff;
+    background: transparent;
 }
 
 .hero-content {
@@ -232,7 +234,8 @@ nav a:hover {
 /* Section Styles */
 .section {
     padding: 4rem 0;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
 }
 
 .dark-section {
@@ -269,12 +272,13 @@ nav a:hover {
 }
 
 .info-card {
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 0;
     box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    border: 3px solid #333;
+    border: 3px solid rgba(255, 170, 165, 0.6);
+    backdrop-filter: blur(5px);
 }
 
 .info-card:hover {
@@ -420,14 +424,15 @@ nav a:hover {
 }
 
 .character-card {
-    background: #4a90e2;
+    background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 0;
     text-align: center;
     box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease;
-    color: var(--text-light);
-    border: 3px solid #2c5aa0;
+    color: var(--text-dark);
+    border: 3px solid rgba(168, 230, 207, 0.8);
+    backdrop-filter: blur(5px);
 }
 
 .character-card:hover {
@@ -879,11 +884,13 @@ html {
 
 /* Character Avatar Image Support */
 .character-image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     object-fit: contain;
     border: none;
     background: transparent;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Responsive Modal */
