@@ -491,6 +491,16 @@ nav a:hover {
     margin-top: 2rem;
 }
 
+.data-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.data-card-link:hover {
+    text-decoration: none;
+}
+
 .data-card {
     background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
@@ -498,12 +508,14 @@ nav a:hover {
     text-align: center;
     border: 2px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.data-card:hover {
+.data-card-link:hover .data-card {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-    border-color: var(--primary-yellow);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffd700;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .data-number {
