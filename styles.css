@@ -291,6 +291,20 @@ nav a:hover {
     color: var(--text-light);
 }
 
+#characters {
+    background: rgba(255, 107, 157, 0.2);
+}
+
+#characters .container {
+    padding: 0;
+    max-width: 100%;
+}
+
+#characters .section-title,
+#characters .section-subtitle {
+    padding: 0 20px;
+}
+
 .section-title {
     font-family: 'VT323', monospace;
     font-size: 2.5rem;
@@ -299,6 +313,12 @@ nav a:hover {
     color: inherit;
     letter-spacing: 3px;
     line-height: 1.4;
+}
+
+.meet-title {
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .section-subtitle {
@@ -469,6 +489,10 @@ nav a:hover {
     grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
 }
 
 .character-card {
@@ -1416,4 +1440,6 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+
 
