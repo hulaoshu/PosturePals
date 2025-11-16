@@ -1,4 +1,8 @@
 /* Reset and Base Styles */
+     git add styles.css
+     git commit -m "Center characters grid in pink section"
+     git push
+
 * {
     margin: 0;
     padding: 0;
