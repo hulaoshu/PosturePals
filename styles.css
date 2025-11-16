@@ -485,11 +485,17 @@ nav a:hover {
 
 /* Characters Grid */
 .characters-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+   display: grid;
+    /* CHANGE: Use auto-fit and minmax for responsive columns,
+       allowing characters to wrap to the next line on smaller screens
+       and ensuring the grid fills the available space. */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
     gap: 1.5rem;
     margin-top: 2rem;
-    max-width: 1000px;
+    /* CHANGE: Removed max-width: 1000px; to allow the grid to take more space,
+       or you can set it much higher (e.g., 1400px) if you need more space.
+       Keeping it without max-width will allow the grid to fill the container. */
+    max-width: 1400px; /* Increased maximum width */
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
